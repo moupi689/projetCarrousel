@@ -1,3 +1,4 @@
+//on récupère les éléments dont on aura besoin
 let container= document.getElementById("container");
 let leftButton= document.getElementById("leftButton");
 let rightButton=document.getElementById("rightButton");
