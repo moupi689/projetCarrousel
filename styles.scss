@@ -1,0 +1,63 @@
+@mixin container-size{
+    width: 1024px;
+    height: 700px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/20161002_180306.jpeg);
+    background-size: cover;
+    min-height: 100vh;
+
+    > .carrousel{                                       //combinateur parent>enfant
+        @include container-size;
+        border: 3px solid #000;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+
+        > .carrousel__container{
+            @include container-size;
+
+            > .photo{
+                @include container-size;
+                margin: 0;
+                display: inline-block;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+
+.button{
+    width: 70px;
+    position: absolute;
+    top: 310px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    opacity: 0.5;
+        &:active{
+            transform: scale(0.9); 
+        }
+        &:hover{
+            opacity: 0.8;
+        }
+    + .button--right {                          //combinateur adjacent
+        transform: rotate(180deg);
+        right: 0;
+        &:active{
+            transform: rotate(180deg) scale(0.9);
+        }
+    }
+}
+
+
+
+
+
+
